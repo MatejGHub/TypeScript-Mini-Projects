@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, darkblue, purple);
+  background-attachment: fixed;
+}
+
+main {
+  padding: 10%;
+  width: 530px;
+  min-width: 400px;
+  max-width: 530px;
+}
+
+#to-do-header {
+  color: rgb(247, 247, 36);
+  font-size: 3.3rem;
+  margin-bottom: 30px;
+}
+
+#to-do-form {
+  width: 530px;
+  min-width: 400px;
+  max-width: 530px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+  border-radius: 30px;
+  overflow: hidden;
+  padding-left: 7px;
+  margin-bottom: 15px;
+}
+
+#to-do-input {
+  border: none;
+  width: 80%;
+  font-size: 1rem;
+}
+
+#to-do-input:focus {
+  outline: none;
+}
+
+#to-do-add {
+  width: 20%;
+  border: none;
+  color: rgb(36, 36, 36);
+  font-weight: bold;
+  font-size: 1.15rem;
+  background-color: rgb(247, 247, 36);
+  cursor: pointer;
+}
+
+#to-do-add:active {
+  background-color: rgb(235, 235, 36);
+  font-size: 1.1rem;
+}
+
+li:before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-image: url(Images/Unchecked.png);
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+li.active::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-image: url(Images/Checked.png);
+  background-size: 8px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+li {
+  padding-bottom: 4px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  font-size: 1.2rem;
+  word-wrap: break-word;
+}
+
+li.active {
+  text-decoration: line-through;
+}
+
+li::after {
+  opacity: 0;
+  visibility: hidden;
+}
+
+li.active::after {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-size: 13px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  border-radius: 50%;
+  right: 0;
+  background-image: url(Images/X.png);
+  margin-top: 5px; /*Content is moved 5px down to make it look centered*/
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  list-style: none;
+  margin-left: 8px;
+  font-size: 1.05rem;
+}
